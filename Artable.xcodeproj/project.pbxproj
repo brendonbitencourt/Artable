@@ -27,6 +27,7 @@
 		DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C02E2352D86C002E9960 /* LoginViewController.swift */; };
 		DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0312352D889002E9960 /* RegisterViewController.swift */; };
 		DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
+		DAE716002361180C00698CFF /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DAE715FF2361180C00698CFF /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				DA99C0342352E0C3002E9960 /* Extensions.swift */,
+				DAE715FF2361180C00698CFF /* Contants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */,
 				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
 				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
+				DAE716002361180C00698CFF /* Contants.swift in Sources */,
 				DA1A930B234D5AE40021C53C /* ViewController.swift in Sources */,
 				DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */,
 				DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */,

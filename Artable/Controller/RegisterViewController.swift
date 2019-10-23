@@ -20,7 +20,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordCheck: UIImageView!
     @IBOutlet weak var confirmPasswordCheck: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
