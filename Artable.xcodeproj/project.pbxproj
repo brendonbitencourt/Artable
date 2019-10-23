@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,11 @@
 		DA1A932D234D5B370021C53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1A932B234D5B370021C53C /* LaunchScreen.storyboard */; };
 		DA1A9333234D5B8D0021C53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1A930F234D5AE60021C53C /* Assets.xcassets */; };
 		DA1F75712352A0ED008FF0D3 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */; };
+		DA99C0272352CDB9002E9960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */; };
+		DA99C0292352CFC8002E9960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99C0282352CFC8002E9960 /* GoogleService-Info.plist */; };
+		DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C02E2352D86C002E9960 /* LoginViewController.swift */; };
+		DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0312352D889002E9960 /* RegisterViewController.swift */; };
+		DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		DA1A932C234D5B370021C53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1A932E234D5B370021C53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA99C0282352CFC8002E9960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +87,6 @@
 				1D1A623539BE1D245DA2A6E9 /* Pods-ArtableAdmin.debug.xcconfig */,
 				A37363D91DB62FD2E91C22CA /* Pods-ArtableAdmin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,13 +123,15 @@
 		DA1A9305234D5AE40021C53C /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				DA99C02C2352D806002E9960 /* Model */,
+				DA99C02A2352D7F5002E9960 /* View */,
+				DA99C02B2352D7FF002E9960 /* Controller */,
+				DA99C02D2352D81A002E9960 /* Storyboard */,
 				DA1A9306234D5AE40021C53C /* AppDelegate.swift */,
 				DA1A9308234D5AE40021C53C /* SceneDelegate.swift */,
-				DA1A930A234D5AE40021C53C /* ViewController.swift */,
-				DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */,
-				DA1A930C234D5AE40021C53C /* Main.storyboard */,
 				DA1A9311234D5AE60021C53C /* LaunchScreen.storyboard */,
 				DA1A9314234D5AE60021C53C /* Info.plist */,
+				DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */,
 			);
 			path = Artable;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 				DA1A9326234D5B360021C53C /* Main.storyboard */,
 				DA1A932B234D5B370021C53C /* LaunchScreen.storyboard */,
 				DA1A932E234D5B370021C53C /* Info.plist */,
+				DA99C0282352CFC8002E9960 /* GoogleService-Info.plist */,
 			);
 			path = ArtableAdmin;
 			sourceTree = "<group>";
@@ -141,9 +153,51 @@
 		DA1A9332234D5B6B0021C53C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DA99C0332352E0B2002E9960 /* Utils */,
 				DA1A930F234D5AE60021C53C /* Assets.xcassets */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		DA99C02A2352D7F5002E9960 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA99C02B2352D7FF002E9960 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA1A930A234D5AE40021C53C /* ViewController.swift */,
+				DA99C02E2352D86C002E9960 /* LoginViewController.swift */,
+				DA99C0312352D889002E9960 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA99C02C2352D806002E9960 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA99C02D2352D81A002E9960 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */,
+				DA1A930C234D5AE40021C53C /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DA99C0332352E0B2002E9960 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DA99C0342352E0C3002E9960 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +285,7 @@
 			files = (
 				DA1A9313234D5AE60021C53C /* LaunchScreen.storyboard in Resources */,
 				DA1A9310234D5AE60021C53C /* Assets.xcassets in Resources */,
+				DA99C0272352CDB9002E9960 /* GoogleService-Info.plist in Resources */,
 				DA1A930E234D5AE40021C53C /* Main.storyboard in Resources */,
 				DA1F75712352A0ED008FF0D3 /* LoginStoryboard.storyboard in Resources */,
 			);
@@ -241,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A932D234D5B370021C53C /* LaunchScreen.storyboard in Resources */,
+				DA99C0292352CFC8002E9960 /* GoogleService-Info.plist in Resources */,
 				DA1A9333234D5B8D0021C53C /* Assets.xcassets in Resources */,
 				DA1A9328234D5B360021C53C /* Main.storyboard in Resources */,
 			);
@@ -334,6 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */,
+				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
+				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
 				DA1A930B234D5AE40021C53C /* ViewController.swift in Sources */,
 				DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */,
 				DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */,

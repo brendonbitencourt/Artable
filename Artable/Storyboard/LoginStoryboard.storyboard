@@ -119,7 +119,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BM9-Jc-dK6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="707-nt-s2H" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="707-nt-s2H" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iED-GY-gXm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="ccg-0U-dwt">
             <objects>
-                <viewController id="o5s-Rk-PWC" sceneMemberID="viewController">
+                <viewController id="o5s-Rk-PWC" customClass="RegisterViewController" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7OJ-6Q-eRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,14 +198,17 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="0.94901960780000005" green="0.95294117649999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerClicked:" destination="o5s-Rk-PWC" eventType="touchUpInside" id="Jix-Hu-6Iu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jm1-FM-uYq">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jm1-FM-uYq">
                                 <rect key="frame" x="188.5" y="446.5" width="37" height="37"/>
                                 <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-Xu-g4G">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-Xu-g4G">
                                 <rect key="frame" x="356" y="270" width="30" height="29"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -213,7 +216,7 @@
                                     <constraint firstAttribute="width" constant="30" id="dNC-YZ-JsA"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-aN-fny">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-aN-fny">
                                 <rect key="frame" x="356" y="322" width="30" height="29"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -237,6 +240,15 @@
                         <viewLayoutGuide key="safeArea" id="gQA-aV-WYd"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cxi-vA-1dQ"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jm1-FM-uYq" id="rVN-82-0dS"/>
+                        <outlet property="confirmPasswordCheck" destination="xcR-aN-fny" id="9sq-Wh-S2U"/>
+                        <outlet property="confirmPasswordTextfield" destination="pEm-gv-rgZ" id="vvT-pJ-u3f"/>
+                        <outlet property="emailTextField" destination="kDX-BZ-tCe" id="XSS-WB-haT"/>
+                        <outlet property="nameTextField" destination="Kfs-ZF-6IZ" id="AxU-2k-ZQW"/>
+                        <outlet property="passwordCheck" destination="Qbz-Xu-g4G" id="cKe-ME-LE9"/>
+                        <outlet property="passwordTextField" destination="ASC-x0-ko9" id="wVc-zA-N9L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7r-Js-aR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
