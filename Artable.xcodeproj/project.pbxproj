@@ -28,6 +28,7 @@
 		DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0312352D889002E9960 /* RegisterViewController.swift */; };
 		DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
 		DAE716002361180C00698CFF /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
+		DAE71603236119CF00698CFF /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE71602236119CF00698CFF /* RoundedViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DAE715FF2361180C00698CFF /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		DAE71602236119CF00698CFF /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		DA1A9332234D5B6B0021C53C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DAE71601236119BC00698CFF /* View */,
 				DA99C0332352E0B2002E9960 /* Utils */,
 				DA1A930F234D5AE60021C53C /* Assets.xcassets */,
 			);
@@ -201,6 +204,14 @@
 				DAE715FF2361180C00698CFF /* Contants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DAE71601236119BC00698CFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAE71602236119CF00698CFF /* RoundedViews.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
 				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
 				DAE716002361180C00698CFF /* Contants.swift in Sources */,
+				DAE71603236119CF00698CFF /* RoundedViews.swift in Sources */,
 				DA1A930B234D5AE40021C53C /* ViewController.swift in Sources */,
 				DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */,
 				DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */,
