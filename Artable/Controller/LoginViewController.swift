@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
         activityIndicator.startAnimating()
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             self.activityIndicator.stopAnimating()
-            if let error = error { debugPrint(error) }
+            if let error = error {
+                debugPrint(error)
+                return
+            }
             print("Login was Successful!")
         }
     }
