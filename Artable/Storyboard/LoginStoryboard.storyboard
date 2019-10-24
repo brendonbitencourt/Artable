@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="oGI-oe-u6p">
             <objects>
-                <viewController id="AV8-rU-eCx" sceneMemberID="viewController">
+                <viewController id="AV8-rU-eCx" customClass="LoginViewController" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCh-7i-i0F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +49,9 @@
                                                 <state key="normal" title="Forgot password ?">
                                                     <color key="titleColor" red="0.83529411764705885" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="forgotPasswordClicked:" destination="AV8-rU-eCx" eventType="touchUpInside" id="1cI-fz-jCL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -65,6 +68,9 @@
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.94901960784313721" green="0.95294117647058818" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginClicked:" destination="AV8-rU-eCx" eventType="touchUpInside" id="MDw-fT-0Ns"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxx-li-G4a" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="60" width="374" height="40"/>
@@ -90,13 +96,16 @@
                                                 <state key="normal" title="Continue as guest">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.95294117649999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="guestClicked:" destination="AV8-rU-eCx" eventType="touchUpInside" id="Gbb-ob-PsG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vsi-PN-8gE">
-                                <rect key="frame" x="188.5" y="261.5" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vsi-PN-8gE">
+                                <rect key="frame" x="190.5" y="261.5" width="37" height="37"/>
                                 <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -111,6 +120,11 @@
                         <viewLayoutGuide key="safeArea" id="6G6-Wz-mF1"/>
                     </view>
                     <navigationItem key="navigationItem" id="eN3-og-Sqf"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="vsi-PN-8gE" id="O1E-gx-2F9"/>
+                        <outlet property="emailTextField" destination="4eS-Bf-kVj" id="YAX-Sg-v6t"/>
+                        <outlet property="passwordTextField" destination="vwP-pe-4kY" id="vsl-gu-OZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMU-Er-Kxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,16 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func forgotPasswordClicked(_ sender: Any) {
+    }
+    
+    @IBAction func loginClicked(_ sender: Any) {
+        guard let email = emailTextField.text, email.isNotEmpty,
+            let password = passwordTextField.text, password.isNotEmpty else { return }
+        activityIndicator.startAnimating()
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            self.activityIndicator.stopAnimating()
+            if let error = error { debugPrint(error) }
+            print("Login was Successful!")
+        }
+    }
+    
+    @IBAction func guestClicked(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
