@@ -34,7 +34,11 @@ class LoginViewController: UIViewController {
                 debugPrint(error)
                 return
             }
-            print("Login was Successful!")
+            self.dismiss(animated: true) {
+                if let presentationController = self.presentationController {
+                    self.presentationController?.delegate?.presentationControllerDidDismiss?(presentationController)
+                }
+            }
         }
     }
     
