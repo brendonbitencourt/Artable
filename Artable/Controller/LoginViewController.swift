@@ -18,10 +18,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup a fter loading the view.
     }
     
     @IBAction func forgotPasswordClicked(_ sender: Any) {
+        let viewController = ForgotPasswordViewController()
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overCurrentContext
+        present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func loginClicked(_ sender: Any) {
