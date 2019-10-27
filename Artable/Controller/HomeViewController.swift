@@ -16,11 +16,20 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error { debugPrint(error) }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loginOutBarButton.title = Auth.auth().currentUser != nil ? "Logout" : "Login"
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
+            loginOutBarButton.title = "Logout"
+        } else {
+            loginOutBarButton.title = "Login"
+        }
     }
     
     fileprivate func presentLoginController() {
@@ -31,15 +40,19 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func loginOutClicked(_ sender: Any) {
-        if Auth.auth().currentUser != nil {
+        guard let user = Auth.auth().currentUser else { return }
+        if user.isAnonymous {
+            presentLoginController()
+        } else {
             do {
                 try Auth.auth().signOut()
-                presentLoginController()
+                Auth.auth().signInAnonymously { (result, error) in
+                    if let error = error { debugPrint(error) }
+                    self.presentLoginController()
+                }
             } catch {
-                debugPrint(error.localizedDescription)
+                debugPrint(error)
             }
-        } else {
-            presentLoginController()
         }
     }
     

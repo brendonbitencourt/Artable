@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class RegisterViewController: UIViewController {
-
+    
     //MARK - Outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -56,9 +56,12 @@ class RegisterViewController: UIViewController {
             let password = self.passwordTextField.text, password.isNotEmpty,
             let email = self.emailTextField.text, email.isNotEmpty else { return }
         
+        guard let authUser = Auth.auth().currentUser else { return }
+        
         activityIndicator.startAnimating()
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        authUser.link(with: credential) { (result, error) in
             self.activityIndicator.stopAnimating()
             if let error = error {
                 debugPrint(error)
@@ -69,13 +72,13 @@ class RegisterViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
