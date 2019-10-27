@@ -54,7 +54,15 @@ class RegisterViewController: UIViewController {
     @IBAction func registerClicked(_ sender: Any) {
         guard let name = self.nameTextField.text, name.isNotEmpty,
             let password = self.passwordTextField.text, password.isNotEmpty,
-            let email = self.emailTextField.text, email.isNotEmpty else { return }
+            let email = self.emailTextField.text, email.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Please fill out all fields.")
+                return
+        }
+        
+        guard let confirmPassword = self.confirmPasswordTextfield.text, confirmPassword == password else {
+            simpleAlert(title: "Error", message: "Password do not match.")
+            return
+        }
         
         guard let authUser = Auth.auth().currentUser else { return }
         
