@@ -64,7 +64,7 @@ class RegisterViewController: UIViewController {
         authUser.link(with: credential) { (result, error) in
             self.activityIndicator.stopAnimating()
             if let error = error {
-                debugPrint(error)
+                self.handleFireAuthError(error: error)
                 return
             }
             self.dismiss(animated: true, completion: nil)
