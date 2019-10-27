@@ -22,6 +22,8 @@
 		DA1A932D234D5B370021C53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1A932B234D5B370021C53C /* LaunchScreen.storyboard */; };
 		DA1A9333234D5B8D0021C53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1A930F234D5AE60021C53C /* Assets.xcassets */; };
 		DA1F75712352A0ED008FF0D3 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */; };
+		DA69B8A62366285100DF3779 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69B8A52366285100DF3779 /* Firebase+Utils.swift */; };
+		DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69B8A52366285100DF3779 /* Firebase+Utils.swift */; };
 		DA7627D223661C2F00323555 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */; };
 		DA7627D323661C2F00323555 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7627D123661C2F00323555 /* ForgotPasswordViewController.xib */; };
 		DA99C0272352CDB9002E9960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */; };
@@ -56,6 +58,7 @@
 		DA1A932C234D5B370021C53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1A932E234D5B370021C53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA1F75702352A0ED008FF0D3 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		DA69B8A52366285100DF3779 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DA7627D123661C2F00323555 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -216,6 +219,7 @@
 			children = (
 				DA99C0342352E0C3002E9960 /* Extensions.swift */,
 				DAE715FF2361180C00698CFF /* Contants.swift */,
+				DA69B8A52366285100DF3779 /* Firebase+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -419,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA69B8A62366285100DF3779 /* Firebase+Utils.swift in Sources */,
 				DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */,
 				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
 				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
@@ -435,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */,
 				DA1A9325234D5B360021C53C /* ViewController.swift in Sources */,
 				DA1A9321234D5B360021C53C /* AppDelegate.swift in Sources */,
 				DA1A9323234D5B360021C53C /* SceneDelegate.swift in Sources */,
@@ -601,6 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3CKR2Q8L8;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,6 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3CKR2Q8L8;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,6 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3CKR2Q8L8;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +667,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3CKR2Q8L8;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

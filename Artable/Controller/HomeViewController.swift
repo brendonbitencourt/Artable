@@ -18,7 +18,9 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         if Auth.auth().currentUser == nil {
             Auth.auth().signInAnonymously { (result, error) in
-                if let error = error { self.handleFireAuthError(error: error) }
+                if let error = error {
+                    Auth.auth().handleError(error: error, viewController: self)
+                }
             }
         }
     }
@@ -47,11 +49,13 @@ class HomeViewController: UIViewController {
             do {
                 try Auth.auth().signOut()
                 Auth.auth().signInAnonymously { (result, error) in
-                    if let error = error { self.handleFireAuthError(error: error) }
+                    if let error = error {
+                       Auth.auth().handleError(error: error, viewController: self)
+                    }
                     self.presentLoginController()
                 }
             } catch {
-                handleFireAuthError(error: error)
+                Auth.auth().handleError(error: error, viewController: self)
             }
         }
     }
