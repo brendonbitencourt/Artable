@@ -12,6 +12,8 @@ import Firebase
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var loginOutBarButton: UIBarButtonItem!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
