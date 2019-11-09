@@ -37,6 +37,10 @@
 		DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C02E2352D86C002E9960 /* LoginViewController.swift */; };
 		DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0312352D889002E9960 /* RegisterViewController.swift */; };
 		DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
+		DACFACCC237755DA001CE730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
+		DACFACCD237755EA001CE730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
+		DACFACCF23775654001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
+		DACFACD023775659001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
 		DAE716002361180C00698CFF /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
 		DAE71603236119CF00698CFF /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE71602236119CF00698CFF /* RoundedViews.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,8 @@
 		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DACFACCB237755DA001CE730 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		DACFACCE23775654001CE730 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DAE715FF2361180C00698CFF /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		DAE71602236119CF00698CFF /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +219,7 @@
 				DA1A930A234D5AE40021C53C /* HomeViewController.swift */,
 				DA99C02E2352D86C002E9960 /* LoginViewController.swift */,
 				DA99C0312352D889002E9960 /* RegisterViewController.swift */,
+				DACFACCB237755DA001CE730 /* ProductsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3FF9DB236D1F200055EFA6 /* Category.swift */,
+				DACFACCE23775654001CE730 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 				DA69B8A62366285100DF3779 /* Firebase+Utils.swift in Sources */,
 				DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */,
 				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
+				DACFACCC237755DA001CE730 /* ProductsViewController.swift in Sources */,
 				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
 				DA3FF9E0236D20C30055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
 				DAE716002361180C00698CFF /* Contants.swift in Sources */,
@@ -457,6 +466,7 @@
 				DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */,
 				DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */,
 				DA3FF9DC236D1F200055EFA6 /* Category.swift in Sources */,
+				DACFACCF23775654001CE730 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +475,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */,
+				DACFACD023775659001CE730 /* Product.swift in Sources */,
 				DA3FF9DD236D1F200055EFA6 /* Category.swift in Sources */,
+				DACFACCD237755EA001CE730 /* ProductsViewController.swift in Sources */,
 				DA1A9325234D5B360021C53C /* ViewController.swift in Sources */,
 				DA1A9321234D5B360021C53C /* AppDelegate.swift in Sources */,
 				DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
