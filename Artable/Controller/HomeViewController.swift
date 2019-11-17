@@ -17,12 +17,12 @@ class HomeViewController: UIViewController {
     
     var categories = [Category]()
     var selectedCategory: Category?
+    var db: Firestore?
+    var listener: ListenerRegistration?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let category = Category.init(name: "Nature", id: "1", imageUrl: "https://images.unsplash.com/photo-1572510176982-e9b0dac331d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", timestamp: Timestamp())
-        categories.append(category)
+        db = Firestore.firestore()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -37,6 +37,62 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func fetchDocument() {
+        let documentRef = db?.collection("categories").document("uqaLsbaYFRdxWmMEvvOX")
+        documentRef?.getDocument { (snapshot, error) in
+            guard let data = snapshot?.data() else { return }
+            let newCategory = Category.init(data: data)
+            self.categories.append(newCategory)
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchDocumentListener() {
+        let documentRef = db?.collection("categories").document("uqaLsbaYFRdxWmMEvvOX")
+        listener = documentRef?.addSnapshotListener({ (snapshot, error) in
+            guard let data = snapshot?.data() else { return }
+            let newCategory = Category.init(data: data)
+            if self.categories.count > 0 {
+                let index = self.categories.firstIndex { (category) -> Bool in
+                    return category.id == newCategory.id
+                }
+                if let index = index, index >= 0 {
+                    self.categories[index] = newCategory
+                }
+            } else {
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        })
+    }
+    
+    func fetchCollection() {
+        let collectionRef = db?.collection("categories")
+        collectionRef?.getDocuments(completion: { (snapshot, error) in
+            guard let documents = snapshot?.documents else { return }
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        })
+    }
+    
+    func fetchCollectionListener() {
+        let collectionRef = db?.collection("categories")
+        listener = collectionRef?.addSnapshotListener({ (snapshot, error) in
+            guard let documents = snapshot?.documents else { return }
+            self.categories.removeAll()
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        })
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let user = Auth.auth().currentUser, !user.isAnonymous {
@@ -44,6 +100,16 @@ class HomeViewController: UIViewController {
         } else {
             loginOutBarButton.title = "Login"
         }
+        
+        //fetchDocument()
+        //fetchCollection()
+        //fetchDocumentListener()
+        fetchCollectionListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listener?.remove()
     }
     
     fileprivate func presentLoginController() {
