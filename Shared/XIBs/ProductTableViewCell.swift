@@ -24,7 +24,10 @@ class ProductTableViewCell: UITableViewCell {
     func setupCell(product: Product) {
         titleLabel.text = product.name
         if let url = URL(string: product.imageUrl) {
-            productImage.kf.setImage(with: url)
+            let placeholder = UIImage(named: "placeholder")
+            let options: KingfisherOptionsInfo = [.transition(.fade(0.1))]
+            productImage.kf.indicatorType = .activity
+            productImage.kf.setImage(with: url, placeholder: placeholder, options: options)
         }
     }
     
