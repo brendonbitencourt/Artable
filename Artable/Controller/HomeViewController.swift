@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var categories = [Category]()
+    var selectedCategory: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,9 +90,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let cellWidth = (width - 50) / 2
+        let cellWidth = (width - 30) / 2
         let cellHeight = cellWidth * 1.5
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segues.ToProducts, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToProducts {
+            if let destination = segue.destination as? ProductsViewController {
+                destination.category = selectedCategory
+            }
+        }
     }
     
 }
