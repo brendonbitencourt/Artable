@@ -93,6 +93,61 @@ class HomeViewController: UIViewController {
         })
     }
     
+    func setCategoriesListener() {
+        let collectionRef = db?.collection("categories")
+        listener = collectionRef?.addSnapshotListener({ (snapshot, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return
+            }
+            
+            snapshot?.documentChanges.forEach({ (change) in
+                let data = change.document.data()
+                let category = Category.init(data: data)
+                
+                switch change.type {
+                    case .added:
+                        self.onDocumentAdded(change, category)
+                    case .modified:
+                        self.onDocumentModified(change, category)
+                    case .removed:
+                        self.onDocumentRemoved(change)
+                    @unknown default:
+                        fatalError()
+                }
+            })
+            
+        })
+    }
+    
+    func onDocumentAdded(_ change: DocumentChange, _ category: Category) {
+        let newIndex = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    
+    func onDocumentModified(_ change: DocumentChange, _ category: Category) {
+        let oldIndex = Int(change.oldIndex)
+        let newIndex = Int(change.newIndex)
+        
+        if change.oldIndex == change.newIndex {
+            categories[newIndex] = category
+            collectionView.reloadItems(at: [IndexPath(item: newIndex, section: 0)])
+        } else {
+            let oldIndexPath = IndexPath(item: oldIndex, section: 0)
+            let newIndexPath = IndexPath(item: newIndex, section: 0)
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)
+            collectionView.moveItem(at: oldIndexPath, to: newIndexPath)
+        }
+    }
+    
+    func onDocumentRemoved(_ change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        categories.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let user = Auth.auth().currentUser, !user.isAnonymous {
@@ -104,12 +159,19 @@ class HomeViewController: UIViewController {
         //fetchDocument()
         //fetchCollection()
         //fetchDocumentListener()
-        fetchCollectionListener()
+        //fetchCollectionListener()
+        setCategoriesListener()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         listener?.remove()
+        categories.removeAll()
+        collectionView.reloadData()
     }
     
     fileprivate func presentLoginController() {
