@@ -37,6 +37,28 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
+            loginOutBarButton.title = "Logout"
+        } else {
+            loginOutBarButton.title = "Login"
+        }
+        
+        setCategoriesListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        listener?.remove()
+        categories.removeAll()
+        collectionView.reloadData()
+    }
+    
     func fetchDocument() {
         let documentRef = db?.collection("categories").document("uqaLsbaYFRdxWmMEvvOX")
         documentRef?.getDocument { (snapshot, error) in
@@ -95,7 +117,9 @@ class HomeViewController: UIViewController {
     
     func setCategoriesListener() {
         let collectionRef = db?.collection("categories")
-        listener = collectionRef?.addSnapshotListener({ (snapshot, error) in
+        let queriedCollectionRef = collectionRef?.whereField("isActive", isEqualTo: true)
+        let orderedCollectionRef = queriedCollectionRef?.order(by: "timestamp")
+        listener = orderedCollectionRef?.addSnapshotListener({ (snapshot, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -146,32 +170,6 @@ class HomeViewController: UIViewController {
         let oldIndex = Int(change.oldIndex)
         categories.remove(at: oldIndex)
         collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let user = Auth.auth().currentUser, !user.isAnonymous {
-            loginOutBarButton.title = "Logout"
-        } else {
-            loginOutBarButton.title = "Login"
-        }
-        
-        //fetchDocument()
-        //fetchCollection()
-        //fetchDocumentListener()
-        //fetchCollectionListener()
-        setCategoriesListener()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        listener?.remove()
-        categories.removeAll()
-        collectionView.reloadData()
     }
     
     fileprivate func presentLoginController() {
