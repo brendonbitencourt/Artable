@@ -17,17 +17,43 @@ class ProductsViewController: UIViewController {
     // Variables
     var products = [Product]()
     var category: Category?
+    var listener: ListenerRegistration?
+    var db: Firestore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let product = Product(name: "Landscape", id: "das", category: "Nature", price: 24.99, desc: "What a lovely", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parque_Eagle_River%2C_Anchorage%2C_Alaska%2C_Estados_Unidos%2C_2017-09-01%2C_DD_21.jpg/800px-Parque_Eagle_River%2C_Anchorage%2C_Alaska%2C_Estados_Unidos%2C_2017-09-01%2C_DD_21.jpg", timestamp: Timestamp(), stock: 0, favorite: false)
-        self.products.append(product)
-        
+        db = Firestore.firestore()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
         // Do any additional setup after loading the view.
+        setupProductListener()
+    }
+    
+    func setupProductListener() {
+        guard let idCategory = category?.id else { return }
+        
+        listener = db?.products(category: idCategory).addSnapshotListener({ (snapshot, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            }
+            
+            snapshot?.documentChanges.forEach({ (change) in
+                let data = change.document.data()
+                let product = Product.init(data: data)
+                
+                switch change.type {
+                    case .added:
+                        self.onDocumentAdded(change, product)
+                    case .modified:
+                        self.onDocumentModified(change, product)
+                    case .removed:
+                        self.onDocumentRemoved(change)
+                    @unknown default:
+                        fatalError()
+                }
+            })
+        })
     }
     
 }
@@ -49,6 +75,34 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
+    }
+    
+    fileprivate func onDocumentAdded(_ change: DocumentChange, _ product: Product) {
+        let newIndex = Int(change.newIndex)
+        products.insert(product, at: newIndex)
+        tableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .automatic)
+    }
+    
+    fileprivate func onDocumentModified(_ change: DocumentChange, _  product: Product) {
+        let oldIndex = Int(change.oldIndex)
+        let newIndex = Int(change.newIndex)
+        
+        if change.oldIndex == change.newIndex {
+            products[oldIndex] = product
+            tableView.reloadRows(at: [IndexPath(row: oldIndex, section: 0)], with: .none)
+        } else {
+            let oldIndexPath = IndexPath(item: oldIndex, section: 0)
+            let newIndexPath = IndexPath(item: newIndex, section: 0)
+            products.remove(at: oldIndex)
+            products.insert(product, at: newIndex)
+            tableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        }
+    }
+    
+    fileprivate func onDocumentRemoved(_ change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        products.remove(at: oldIndex)
+        tableView.deleteRows(at: [IndexPath(item: oldIndex, section: 0)], with: .automatic)
     }
     
 }

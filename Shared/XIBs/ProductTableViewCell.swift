@@ -15,7 +15,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

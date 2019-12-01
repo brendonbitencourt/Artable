@@ -79,6 +79,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Nbe-af-Apl" secondAttribute="bottom" constant="8" id="O3m-2p-K6E"/>
                     <constraint firstItem="Nbe-af-Apl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Pzc-sQ-vZK"/>
@@ -89,6 +90,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contentView" destination="H2p-sc-9uM" id="d7t-l6-qZP"/>
                 <outlet property="favoriteButton" destination="QJu-wU-p2g" id="jSi-tX-DDf"/>
                 <outlet property="priceLabel" destination="Qoe-Sc-EOH" id="EX1-q7-OCx"/>
                 <outlet property="productImage" destination="Ipc-0e-KhO" id="yRU-ya-Sp1"/>
