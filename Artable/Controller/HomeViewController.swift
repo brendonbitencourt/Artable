@@ -23,18 +23,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: Identifiers.CategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCollectionViewCell)
-        // Do any additional setup after loading the view.
-        if Auth.auth().currentUser == nil {
-            Auth.auth().signInAnonymously { (result, error) in
-                if let error = error {
-                    Auth.auth().handleError(error: error, viewController: self)
-                }
-            }
-        }
+        setupCollectionView()
+        setupInitialAnonymousUser()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +47,22 @@ class HomeViewController: UIViewController {
         listener?.remove()
         categories.removeAll()
         collectionView.reloadData()
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: Identifiers.CategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCollectionViewCell)
+    }
+    
+    func setupInitialAnonymousUser() {
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error {
+                    Auth.auth().handleError(error: error, viewController: self)
+                }
+            }
+        }
     }
     
     func fetchDocument() {
@@ -116,10 +122,7 @@ class HomeViewController: UIViewController {
     }
     
     func setCategoriesListener() {
-        let collectionRef = db?.collection("categories")
-        let queriedCollectionRef = collectionRef?.whereField("isActive", isEqualTo: true)
-        let orderedCollectionRef = queriedCollectionRef?.order(by: "timestamp")
-        listener = orderedCollectionRef?.addSnapshotListener({ (snapshot, error) in
+        listener = db?.categories.addSnapshotListener({ (snapshot, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -142,34 +145,6 @@ class HomeViewController: UIViewController {
             })
             
         })
-    }
-    
-    func onDocumentAdded(_ change: DocumentChange, _ category: Category) {
-        let newIndex = Int(change.newIndex)
-        categories.insert(category, at: newIndex)
-        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
-    }
-    
-    func onDocumentModified(_ change: DocumentChange, _ category: Category) {
-        let oldIndex = Int(change.oldIndex)
-        let newIndex = Int(change.newIndex)
-        
-        if change.oldIndex == change.newIndex {
-            categories[newIndex] = category
-            collectionView.reloadItems(at: [IndexPath(item: newIndex, section: 0)])
-        } else {
-            let oldIndexPath = IndexPath(item: oldIndex, section: 0)
-            let newIndexPath = IndexPath(item: newIndex, section: 0)
-            categories.remove(at: oldIndex)
-            categories.insert(category, at: newIndex)
-            collectionView.moveItem(at: oldIndexPath, to: newIndexPath)
-        }
-    }
-    
-    func onDocumentRemoved(_ change: DocumentChange) {
-        let oldIndex = Int(change.oldIndex)
-        categories.remove(at: oldIndex)
-        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
     
     fileprivate func presentLoginController() {
@@ -232,6 +207,34 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 destination.category = selectedCategory
             }
         }
+    }
+    
+    fileprivate func onDocumentAdded(_ change: DocumentChange, _ category: Category) {
+        let newIndex = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    
+    fileprivate func onDocumentModified(_ change: DocumentChange, _ category: Category) {
+        let oldIndex = Int(change.oldIndex)
+        let newIndex = Int(change.newIndex)
+        
+        if change.oldIndex == change.newIndex {
+            categories[newIndex] = category
+            collectionView.reloadItems(at: [IndexPath(item: newIndex, section: 0)])
+        } else {
+            let oldIndexPath = IndexPath(item: oldIndex, section: 0)
+            let newIndexPath = IndexPath(item: newIndex, section: 0)
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)
+            collectionView.moveItem(at: oldIndexPath, to: newIndexPath)
+        }
+    }
+    
+    fileprivate func onDocumentRemoved(_ change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        categories.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
     
 }
