@@ -77,6 +77,15 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         return 180
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedProduct = products[indexPath.row]
+        let viewController = ProductDetailViewController()
+        viewController.product = selectedProduct
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overCurrentContext
+        present(viewController, animated: true, completion: nil)
+    }
+    
     fileprivate func onDocumentAdded(_ change: DocumentChange, _ product: Product) {
         let newIndex = Int(change.newIndex)
         products.insert(product, at: newIndex)
