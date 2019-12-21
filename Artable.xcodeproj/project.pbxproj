@@ -39,8 +39,10 @@
 		DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C02E2352D86C002E9960 /* LoginViewController.swift */; };
 		DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0312352D889002E9960 /* RegisterViewController.swift */; };
 		DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
+		DAB18CC023AEE5A200CBCBF9 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
+		DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
+		DAB18CC223AEE5B200CBCBF9 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE71602236119CF00698CFF /* RoundedViews.swift */; };
 		DACFACCC237755DA001CE730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
-		DACFACCD237755EA001CE730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
 		DACFACCF23775654001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
 		DACFACD023775659001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
 		DACFACD323775733001CE730 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACD123775733001CE730 /* ProductTableViewCell.swift */; };
@@ -493,14 +495,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB18CC223AEE5B200CBCBF9 /* RoundedViews.swift in Sources */,
 				DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */,
 				DACFACD023775659001CE730 /* Product.swift in Sources */,
 				DACFACD423775733001CE730 /* ProductTableViewCell.swift in Sources */,
 				DA3FF9DD236D1F200055EFA6 /* Category.swift in Sources */,
-				DACFACCD237755EA001CE730 /* ProductsViewController.swift in Sources */,
 				DA1A9325234D5B360021C53C /* ViewController.swift in Sources */,
 				DA1A9321234D5B360021C53C /* AppDelegate.swift in Sources */,
+				DAB18CC023AEE5A200CBCBF9 /* Contants.swift in Sources */,
 				DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
+				DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */,
 				DA1A9323234D5B360021C53C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
