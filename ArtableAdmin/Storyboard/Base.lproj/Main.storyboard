@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gkD-ZM-nSj">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9kZ-0T-3TR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gkD-ZM-nSj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9vO-00-q9F">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dzW-yn-lXf" kind="relationship" relationship="rootViewController" id="Iud-Y6-P3F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uS-5e-eyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="129.31034482758622"/>
+        </scene>
+        <!--admin-->
+        <scene sceneID="43z-09-j7t">
+            <objects>
+                <viewController id="dzW-yn-lXf" customClass="AdminHomeViewController" customModule="ArtableAdmin" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4i-4U-hz1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PWr-lh-3xH">
+                                <rect key="frame" x="10" y="88" width="355" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DBs-ML-cMa">
+                                    <size key="itemSize" width="100" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-zr-OeF">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PWr-lh-3xH" secondAttribute="bottom" id="SMh-um-aqS"/>
+                            <constraint firstItem="PWr-lh-3xH" firstAttribute="top" secondItem="U0b-Ok-4zw" secondAttribute="top" id="a9E-Jm-c3d"/>
+                            <constraint firstItem="d7W-zr-OeF" firstAttribute="centerY" secondItem="a4i-4U-hz1" secondAttribute="centerY" id="foG-rm-GAV"/>
+                            <constraint firstItem="U0b-Ok-4zw" firstAttribute="trailing" secondItem="PWr-lh-3xH" secondAttribute="trailing" constant="10" id="pbT-rx-JBb"/>
+                            <constraint firstItem="d7W-zr-OeF" firstAttribute="centerX" secondItem="a4i-4U-hz1" secondAttribute="centerX" id="sxk-rq-D9G"/>
+                            <constraint firstItem="PWr-lh-3xH" firstAttribute="leading" secondItem="U0b-Ok-4zw" secondAttribute="leading" constant="10" id="thP-4i-UBE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U0b-Ok-4zw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="admin" id="20x-Ly-v2r">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Login" id="hwp-5e-vLa">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="loginOutClicked:" destination="dzW-yn-lXf" id="Csx-JR-tz2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="d7W-zr-OeF" id="9Xv-J8-6ZR"/>
+                        <outlet property="collectionView" destination="PWr-lh-3xH" id="bQs-Ov-zhg"/>
+                        <outlet property="loginOutBarButton" destination="hwp-5e-vLa" id="lcI-dD-MYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IdA-cw-Qcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="129"/>
+        </scene>
+    </scenes>
+</document>
