@@ -46,6 +46,7 @@
 		DAC1089823AEEC24007EA4D3 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
 		DAC1089923AEEC3B007EA4D3 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C55C72394884500A4C461 /* ProductDetailViewController.swift */; };
 		DAC1089A23AEEC3B007EA4D3 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1C55C82394884500A4C461 /* ProductDetailViewController.xib */; };
+		DAC1089D23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1089C23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift */; };
 		DACFACCC237755DA001CE730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
 		DACFACCF23775654001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
 		DACFACD023775659001CE730 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCE23775654001CE730 /* Product.swift */; };
@@ -93,6 +94,7 @@
 		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DAC1089C23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryViewController.swift; sourceTree = "<group>"; };
 		DACFACCB237755DA001CE730 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		DACFACCE23775654001CE730 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DACFACD123775733001CE730 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A9324234D5B360021C53C /* AdminHomeViewController.swift */,
+				DAC1089C23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				DAC1089923AEEC3B007EA4D3 /* ProductDetailViewController.swift in Sources */,
 				DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
 				DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */,
+				DAC1089D23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift in Sources */,
 				DA1A9323234D5B360021C53C /* SceneDelegate.swift in Sources */,
 				DAC1089723AEEAE4007EA4D3 /* HomeViewController.swift in Sources */,
 			);
