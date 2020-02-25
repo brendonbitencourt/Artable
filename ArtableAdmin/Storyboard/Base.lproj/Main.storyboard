@@ -167,6 +167,7 @@
                     <navigationItem key="navigationItem" id="gXO-VR-eLY"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1Rn-dF-RNG" id="Ww0-NY-bbl"/>
+                        <outlet property="addButton" destination="V97-v2-8mK" id="2OM-36-CPI"/>
                         <outlet property="categoryImage" destination="48p-uJ-ARH" id="fdt-YE-43e"/>
                         <outlet property="nameTextField" destination="Ppz-bX-h06" id="tse-Ss-63J"/>
                     </connections>

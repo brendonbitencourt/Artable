@@ -15,6 +15,7 @@ class AddEditCategoryViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var categoryImage: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addButton: UIButton!
     
     var categoryToEdit: Category?
 
@@ -24,6 +25,19 @@ class AddEditCategoryViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
         tap.numberOfTapsRequired = 1
         categoryImage.addGestureRecognizer(tap)
+        // If we are editing, categoryToEdit will not be nil
+        if let categoryToEdit = categoryToEdit {
+            setupEdit(categoryToEdit)
+        }
+    }
+    
+    func setupEdit(_ categoryToEdit: Category) {
+        nameTextField.text = categoryToEdit.name
+        addButton.setTitle("Save Changes", for: .normal)
+        if let url = URL(string: categoryToEdit.imageUrl) {
+            categoryImage.contentMode = .scaleAspectFill
+            categoryImage.kf.setImage(with: url)
+        }
     }
     
     @objc func imageTapped(_ tap: UITapGestureRecognizer) {
@@ -69,10 +83,17 @@ class AddEditCategoryViewController: UIViewController {
     
     func uploadDocument(url: String) {
         guard let categoryName = nameTextField.text else { return }
-        let documentRef = Firestore.firestore().collection("categories").document()
+        
+        var documentRef: DocumentReference!
+
+        if let categoryToEdit = categoryToEdit {
+            documentRef = Firestore.firestore().collection("categories").document(categoryToEdit.id)
+        } else {
+            documentRef = Firestore.firestore().collection("categories").document()
+        }
+        
         let category = Category.init(name: categoryName, id: documentRef.documentID, imageUrl: url, timestamp: Timestamp())
         let data = Category.modelToData(category: category)
-        
         documentRef.setData(data, merge: true) { (error) in
             if let error = error {
                 self.handleError(error, message: "Unable to create category")
