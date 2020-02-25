@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gkD-ZM-nSj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gkD-ZM-nSj">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,6 +83,7 @@
                         <outlet property="collectionView" destination="PWr-lh-3xH" id="bQs-Ov-zhg"/>
                         <outlet property="loginOutBarButton" destination="hwp-5e-vLa" id="lcI-dD-MYn"/>
                         <segue destination="4GR-Gu-DHF" kind="show" identifier="toAddEditCategory" id="noZ-vL-Hei"/>
+                        <segue destination="KRY-US-oRG" kind="show" identifier="toProductsViewController" id="Wwa-Ak-YI7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdA-cw-Qcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,8 +175,60 @@
             </objects>
             <point key="canvasLocation" x="2068" y="129"/>
         </scene>
+        <!--Admin Products View Controller-->
+        <scene sceneID="OSE-z4-Amt">
+            <objects>
+                <viewController id="KRY-US-oRG" customClass="AdminProductsViewController" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z2w-xt-hr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-6t-FZw">
+                                <rect key="frame" x="2" y="88" width="371" height="724"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e2Z-6t-FZw" firstAttribute="leading" secondItem="PTi-ET-PoE" secondAttribute="leading" constant="2" id="Kfa-N9-sVe"/>
+                            <constraint firstItem="PTi-ET-PoE" firstAttribute="trailing" secondItem="e2Z-6t-FZw" secondAttribute="trailing" constant="2" id="TVe-wx-lXt"/>
+                            <constraint firstItem="e2Z-6t-FZw" firstAttribute="top" secondItem="PTi-ET-PoE" secondAttribute="top" id="XJ0-Su-C1V"/>
+                            <constraint firstAttribute="bottom" secondItem="e2Z-6t-FZw" secondAttribute="bottom" id="bdf-D6-SWb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PTi-ET-PoE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PAt-s0-uSk"/>
+                    <connections>
+                        <outlet property="tableView" destination="e2Z-6t-FZw" id="f8U-L5-F5M"/>
+                        <segue destination="Eka-tc-EiW" kind="show" identifier="toAddEditProduct" id="Nes-Zn-iJ8"/>
+                        <segue destination="4GR-Gu-DHF" kind="show" identifier="toEditCategory" id="RJy-WW-2Wh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rHt-V4-w7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="913"/>
+        </scene>
+        <!--Add Edit Product View Controller-->
+        <scene sceneID="Y0N-7i-vma">
+            <objects>
+                <viewController id="Eka-tc-EiW" customClass="AddEditProductViewController" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eFN-ll-idP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hfF-Aq-Heo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yd8-yJ-ptH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCY-a8-UJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121" y="913"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="66" height="54"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RJy-WW-2Wh"/>
+    </inferredMetricsTieBreakers>
 </document>

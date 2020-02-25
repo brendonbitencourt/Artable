@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6859B500C25FBCA464B6ADA3 /* Pods_ArtableAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFE7DEF07D8BD7CFEC754D7 /* Pods_ArtableAdmin.framework */; };
 		9A6BCB6706A01647DDA1D9A6 /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E944287060229D217D2981 /* Pods_Artable.framework */; };
+		DA0E45E4240494FB00D0A2D6 /* AdminProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E45E3240494FB00D0A2D6 /* AdminProductsViewController.swift */; };
 		DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A9306234D5AE40021C53C /* AppDelegate.swift */; };
 		DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A9308234D5AE40021C53C /* SceneDelegate.swift */; };
 		DA1A930B234D5AE40021C53C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A930A234D5AE40021C53C /* HomeViewController.swift */; };
@@ -34,6 +35,7 @@
 		DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69B8A52366285100DF3779 /* Firebase+Utils.swift */; };
 		DA7627D223661C2F00323555 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */; };
 		DA7627D323661C2F00323555 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7627D123661C2F00323555 /* ForgotPasswordViewController.xib */; };
+		DA9949872404992500B7D168 /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9949862404992500B7D168 /* AddEditProductViewController.swift */; };
 		DA99C0272352CDB9002E9960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */; };
 		DA99C0292352CFC8002E9960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99C0282352CFC8002E9960 /* GoogleService-Info.plist */; };
 		DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C02E2352D86C002E9960 /* LoginViewController.swift */; };
@@ -65,6 +67,7 @@
 		9BFE7DEF07D8BD7CFEC754D7 /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37363D91DB62FD2E91C22CA /* Pods-ArtableAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableAdmin.release.xcconfig"; path = "Target Support Files/Pods-ArtableAdmin/Pods-ArtableAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		D57C5BE12A4CD1B3CD4F78DE /* Pods-Artable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.release.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.release.xcconfig"; sourceTree = "<group>"; };
+		DA0E45E3240494FB00D0A2D6 /* AdminProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductsViewController.swift; sourceTree = "<group>"; };
 		DA1A9303234D5AE40021C53C /* Artable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1A9306234D5AE40021C53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA1A9308234D5AE40021C53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		DA69B8A52366285100DF3779 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DA7627D123661C2F00323555 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		DA9949862404992500B7D168 /* AddEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductViewController.swift; sourceTree = "<group>"; };
 		DA99C0262352CDB9002E9960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA99C0282352CFC8002E9960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 			children = (
 				DA1A9324234D5B360021C53C /* AdminHomeViewController.swift */,
 				DAC1089C23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift */,
+				DA0E45E3240494FB00D0A2D6 /* AdminProductsViewController.swift */,
+				DA9949862404992500B7D168 /* AddEditProductViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,10 +549,12 @@
 				DA3FF9DD236D1F200055EFA6 /* Category.swift in Sources */,
 				DA1A9325234D5B360021C53C /* AdminHomeViewController.swift in Sources */,
 				DA1A9321234D5B360021C53C /* AppDelegate.swift in Sources */,
+				DA0E45E4240494FB00D0A2D6 /* AdminProductsViewController.swift in Sources */,
 				DAB18CC023AEE5A200CBCBF9 /* Contants.swift in Sources */,
 				DAC1089923AEEC3B007EA4D3 /* ProductDetailViewController.swift in Sources */,
 				DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
 				DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */,
+				DA9949872404992500B7D168 /* AddEditProductViewController.swift in Sources */,
 				DAC1089D23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift in Sources */,
 				DA1A9323234D5B360021C53C /* SceneDelegate.swift in Sources */,
 				DAC1089723AEEAE4007EA4D3 /* HomeViewController.swift in Sources */,
