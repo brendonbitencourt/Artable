@@ -9,7 +9,7 @@
 import UIKit
 
 class AdminHomeViewController: HomeViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +21,6 @@ class AdminHomeViewController: HomeViewController {
         // Segue to the add category view
         performSegue(withIdentifier: Segues.ToAddEditCategory, sender: self)
     }
-
+    
 }
 

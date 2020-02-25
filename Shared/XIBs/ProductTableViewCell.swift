@@ -23,11 +23,18 @@ class ProductTableViewCell: UITableViewCell {
     
     func setupCell(product: Product) {
         titleLabel.text = product.name
+        
         if let url = URL(string: product.imageUrl) {
             let placeholder = UIImage(named: "placeholder")
             let options: KingfisherOptionsInfo = [.transition(.fade(0.1))]
             productImage.kf.indicatorType = .activity
             productImage.kf.setImage(with: url, placeholder: placeholder, options: options)
+        }
+         
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        if let price = formatter.string(from: product.price as NSNumber) {
+            priceLabel.text = price
         }
     }
     

@@ -18,7 +18,7 @@ class AddEditCategoryViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var categoryToEdit: Category?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -43,7 +43,7 @@ class AddEditCategoryViewController: UIViewController {
     @objc func imageTapped(_ tap: UITapGestureRecognizer) {
         launchImagePicker()
     }
-
+    
     @IBAction func addCategoryClicked(_ sender: Any) {
         uploadImageThenDocument()
     }
@@ -71,7 +71,7 @@ class AddEditCategoryViewController: UIViewController {
             
             imageRef.downloadURL { (url, error) in
                 if let error = error {
-                   self.handleError(error, message: "Unable to create category")
+                    self.handleError(error, message: "Unable to create category")
                     return
                 }
                 guard let url = url else { return }
@@ -85,7 +85,7 @@ class AddEditCategoryViewController: UIViewController {
         guard let categoryName = nameTextField.text else { return }
         
         var documentRef: DocumentReference!
-
+        
         if let categoryToEdit = categoryToEdit {
             documentRef = Firestore.firestore().collection("categories").document(categoryToEdit.id)
         } else {

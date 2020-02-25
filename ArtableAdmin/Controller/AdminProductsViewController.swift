@@ -11,7 +11,7 @@ import UIKit
 class AdminProductsViewController: ProductsViewController {
     
     var selectedProduct: Product?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,5 +46,5 @@ class AdminProductsViewController: ProductsViewController {
             }
         }
     }
-
+    
 }
