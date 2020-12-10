@@ -49,11 +49,17 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func addCartClicked(_ sender: Any) {
+        if UserService.isGuest {
+            sendMessageGuestUser()
+            return
+        }
+        if let product = self.product {
+            StripeCart.addItemToCart(item: product)
+        }
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func dismissProduct(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }

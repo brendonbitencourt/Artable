@@ -31,6 +31,9 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             loginOutBarButton.title = "Logout"
+            if UserService.userListener == nil {
+                UserService.getCurrentUser()
+            }
         } else {
             loginOutBarButton.title = "Login"
         }
@@ -161,6 +164,7 @@ class HomeViewController: UIViewController {
         } else {
             do {
                 try Auth.auth().signOut()
+                UserService.logoutUser()
                 Auth.auth().signInAnonymously { (result, error) in
                     if let error = error {
                         Auth.auth().handleError(error: error, viewController: self)
@@ -171,6 +175,10 @@ class HomeViewController: UIViewController {
                 Auth.auth().handleError(error: error, viewController: self)
             }
         }
+    }
+     
+    @IBAction func favoritesClicked(_ sender: Any) {
+        performSegue(withIdentifier: Segues.ToFavorites, sender: self)
     }
     
 }
@@ -205,6 +213,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if segue.identifier == Segues.ToProducts {
             if let destination = segue.destination as? ProductsViewController {
                 destination.category = selectedCategory
+            }
+        } else if segue.identifier == Segues.ToFavorites {
+            if let destination = segue.destination as? ProductsViewController {
+                destination.category = selectedCategory
+                destination.showFavoritesOnly = true
             }
         }
     }

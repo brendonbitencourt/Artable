@@ -64,19 +64,45 @@ class RegisterViewController: UIViewController {
             return
         }
         
+//        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+//            if let error = error {
+//                Auth.auth().handleError(error: error, viewController: self)
+//                return
+//            }
+//
+//            guard let firUser = result?.user else { return }
+//            let artUser = User(id: firUser.uid, email: email, username: name, stripedId: "")
+//            self.createFirestoreUser(user: artUser)
+//        }
+        
         guard let authUser = Auth.auth().currentUser else { return }
         
         activityIndicator.startAnimating()
         
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         authUser.link(with: credential) { (result, error) in
-            self.activityIndicator.stopAnimating()
             if let error = error {
                 Auth.auth().handleError(error: error, viewController: self)
                 return
             }
-            self.dismiss(animated: true, completion: nil)
+            
+            guard let firUser = result?.user else { return }
+            let artUser = User(id: firUser.uid, email: email, username: name, stripedId: "")
+            self.createFirestoreUser(user: artUser)
         }
     }
     
+    
+    fileprivate func createFirestoreUser(user: User) {
+        let newUserRed = Firestore.firestore().collection("users").document(user.id)
+        let data = User.modelToData(user: user)
+        newUserRed.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleError(error: error, viewController: self)
+                return
+            }
+            self.activityIndicator.stopAnimating()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }

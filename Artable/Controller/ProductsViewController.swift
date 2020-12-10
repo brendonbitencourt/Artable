@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ProductsViewController: UIViewController {
+class ProductsViewController: UIViewController, ProductCellDelegate {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,7 @@ class ProductsViewController: UIViewController {
     var category: Category?
     var listener: ListenerRegistration?
     var db: Firestore?
+    var showFavoritesOnly: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,13 @@ class ProductsViewController: UIViewController {
     
     func setupProductListener() {
         guard let idCategory = category?.id else { return }
+        var ref = db?.products(category: idCategory)
         
-        listener = db?.products(category: idCategory).addSnapshotListener({ (snapshot, error) in
+        if showFavoritesOnly {
+            ref = db?.collection("users").document(UserService.user.id).collection("favorites")
+        }
+        
+        listener = ref?.addSnapshotListener({ (snapshot, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
@@ -56,6 +62,23 @@ class ProductsViewController: UIViewController {
         })
     }
     
+    func productFavorited(product: Product) {
+        if UserService.isGuest {
+            sendMessageGuestUser()
+            return
+        }
+        UserService.favoriteSelected(product: product)
+        guard let index = products.firstIndex(of: product) else { return }
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    func productAddToCart(product: Product) {
+        if UserService.isGuest {
+            sendMessageGuestUser()
+            return
+        }
+        StripeCart.addItemToCart(item: product)
+    }
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +89,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.ProductCell, for: indexPath) as? ProductTableViewCell {
-            cell.setupCell(product: products[indexPath.row])
+            cell.setupCell(product: products[indexPath.row], delegate: self)
             return cell
         }
         

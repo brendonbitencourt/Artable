@@ -31,6 +31,8 @@
 		DA3FF9E2236D20C30055EFA6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA3FF9DF236D20C30055EFA6 /* CategoryCollectionViewCell.xib */; };
 		DA3FF9E3236D20C30055EFA6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA3FF9DF236D20C30055EFA6 /* CategoryCollectionViewCell.xib */; };
 		DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3FF9DE236D20C30055EFA6 /* CategoryCollectionViewCell.swift */; };
+		DA5D032A24F1D3DA009CD88E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D032924F1D3DA009CD88E /* User.swift */; };
+		DA5D032E24F1DA31009CD88E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D032D24F1DA31009CD88E /* UserService.swift */; };
 		DA69B8A62366285100DF3779 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69B8A52366285100DF3779 /* Firebase+Utils.swift */; };
 		DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69B8A52366285100DF3779 /* Firebase+Utils.swift */; };
 		DA7627D223661C2F00323555 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */; };
@@ -44,6 +46,13 @@
 		DAB18CC023AEE5A200CBCBF9 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
 		DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C0342352E0C3002E9960 /* Extensions.swift */; };
 		DAB18CC223AEE5B200CBCBF9 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE71602236119CF00698CFF /* RoundedViews.swift */; };
+		DABDB3A5257FEB1A00454FD5 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB3A4257FEB1A00454FD5 /* CheckoutViewController.swift */; };
+		DABDB3AA257FF2F700454FD5 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB3A8257FF2F700454FD5 /* CartItemTableViewCell.swift */; };
+		DABDB3AB257FF2F700454FD5 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB3A8257FF2F700454FD5 /* CartItemTableViewCell.swift */; };
+		DABDB3AC257FF2F700454FD5 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABDB3A9257FF2F700454FD5 /* CartItemTableViewCell.xib */; };
+		DABDB3AD257FF2F700454FD5 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABDB3A9257FF2F700454FD5 /* CartItemTableViewCell.xib */; };
+		DABDB3B2257FF90600454FD5 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB3B1257FF90600454FD5 /* StripeCart.swift */; };
+		DABDB3B3257FF90600454FD5 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB3B1257FF90600454FD5 /* StripeCart.swift */; };
 		DAC1089723AEEAE4007EA4D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A930A234D5AE40021C53C /* HomeViewController.swift */; };
 		DAC1089823AEEC24007EA4D3 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACCB237755DA001CE730 /* ProductsViewController.swift */; };
 		DAC1089923AEEC3B007EA4D3 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C55C72394884500A4C461 /* ProductDetailViewController.swift */; };
@@ -56,8 +65,11 @@
 		DACFACD423775733001CE730 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFACD123775733001CE730 /* ProductTableViewCell.swift */; };
 		DACFACD523775733001CE730 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DACFACD223775733001CE730 /* ProductTableViewCell.xib */; };
 		DACFACD623775733001CE730 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DACFACD223775733001CE730 /* ProductTableViewCell.xib */; };
+		DAD3B7DD2581591D003A4E68 /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3B7DC2581591D003A4E68 /* StripeApi.swift */; };
 		DAE716002361180C00698CFF /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE715FF2361180C00698CFF /* Contants.swift */; };
 		DAE71603236119CF00698CFF /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE71602236119CF00698CFF /* RoundedViews.swift */; };
+		DAE79EAC25829C2F00F6A6F1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D032D24F1DA31009CD88E /* UserService.swift */; };
+		DAE79EAF25829C4A00F6A6F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D032924F1D3DA009CD88E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +101,8 @@
 		DA3FF9DB236D1F200055EFA6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DA3FF9DE236D20C30055EFA6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA3FF9DF236D20C30055EFA6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		DA5D032924F1D3DA009CD88E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DA5D032D24F1DA31009CD88E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DA69B8A52366285100DF3779 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		DA7627D023661C2F00323555 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DA7627D123661C2F00323555 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -98,11 +112,16 @@
 		DA99C02E2352D86C002E9960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA99C0312352D889002E9960 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DA99C0342352E0C3002E9960 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DABDB3A4257FEB1A00454FD5 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		DABDB3A8257FF2F700454FD5 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
+		DABDB3A9257FF2F700454FD5 /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
+		DABDB3B1257FF90600454FD5 /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
 		DAC1089C23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryViewController.swift; sourceTree = "<group>"; };
 		DACFACCB237755DA001CE730 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		DACFACCE23775654001CE730 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DACFACD123775733001CE730 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		DACFACD223775733001CE730 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		DAD3B7DC2581591D003A4E68 /* StripeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApi.swift; sourceTree = "<group>"; };
 		DAE715FF2361180C00698CFF /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		DAE71602236119CF00698CFF /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +190,8 @@
 		DA1A9305234D5AE40021C53C /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				DABDB3B0257FF8F800454FD5 /* Stripe */,
+				DA5D032C24F1DA21009CD88E /* Service */,
 				DA7627CF23661C0500323555 /* XIBs */,
 				DA99C02A2352D7F5002E9960 /* View */,
 				DA99C02B2352D7FF002E9960 /* Controller */,
@@ -219,8 +240,18 @@
 				DA3FF9DF236D20C30055EFA6 /* CategoryCollectionViewCell.xib */,
 				DACFACD123775733001CE730 /* ProductTableViewCell.swift */,
 				DACFACD223775733001CE730 /* ProductTableViewCell.xib */,
+				DABDB3A8257FF2F700454FD5 /* CartItemTableViewCell.swift */,
+				DABDB3A9257FF2F700454FD5 /* CartItemTableViewCell.xib */,
 			);
 			path = XIBs;
+			sourceTree = "<group>";
+		};
+		DA5D032C24F1DA21009CD88E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DA5D032D24F1DA31009CD88E /* UserService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		DA7627CF23661C0500323555 /* XIBs */ = {
@@ -248,6 +279,7 @@
 				DA99C02E2352D86C002E9960 /* LoginViewController.swift */,
 				DA99C0312352D889002E9960 /* RegisterViewController.swift */,
 				DACFACCB237755DA001CE730 /* ProductsViewController.swift */,
+				DABDB3A4257FEB1A00454FD5 /* CheckoutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +289,7 @@
 			children = (
 				DA3FF9DB236D1F200055EFA6 /* Category.swift */,
 				DACFACCE23775654001CE730 /* Product.swift */,
+				DA5D032924F1D3DA009CD88E /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +344,15 @@
 				DA1A9326234D5B360021C53C /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DABDB3B0257FF8F800454FD5 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				DABDB3B1257FF90600454FD5 /* StripeCart.swift */,
+				DAD3B7DC2581591D003A4E68 /* StripeApi.swift */,
+			);
+			path = Stripe;
 			sourceTree = "<group>";
 		};
 		DAE71601236119BC00698CFF /* View */ = {
@@ -412,6 +454,7 @@
 				DA1C55CA2394884500A4C461 /* ProductDetailViewController.xib in Resources */,
 				DACFACD523775733001CE730 /* ProductTableViewCell.xib in Resources */,
 				DA1A930E234D5AE40021C53C /* Main.storyboard in Resources */,
+				DABDB3AC257FF2F700454FD5 /* CartItemTableViewCell.xib in Resources */,
 				DA1F75712352A0ED008FF0D3 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +469,7 @@
 				DAC1089A23AEEC3B007EA4D3 /* ProductDetailViewController.xib in Resources */,
 				DA99C0292352CFC8002E9960 /* GoogleService-Info.plist in Resources */,
 				DA1A9333234D5B8D0021C53C /* Assets.xcassets in Resources */,
+				DABDB3AD257FF2F700454FD5 /* CartItemTableViewCell.xib in Resources */,
 				DA1A9328234D5B360021C53C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,19 +563,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA69B8A62366285100DF3779 /* Firebase+Utils.swift in Sources */,
+				DAD3B7DD2581591D003A4E68 /* StripeApi.swift in Sources */,
 				DA99C02F2352D86C002E9960 /* LoginViewController.swift in Sources */,
+				DA5D032E24F1DA31009CD88E /* UserService.swift in Sources */,
 				DACFACD323775733001CE730 /* ProductTableViewCell.swift in Sources */,
 				DA99C0322352D889002E9960 /* RegisterViewController.swift in Sources */,
 				DACFACCC237755DA001CE730 /* ProductsViewController.swift in Sources */,
 				DA99C0352352E0C3002E9960 /* Extensions.swift in Sources */,
 				DA3FF9E0236D20C30055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
+				DA5D032A24F1D3DA009CD88E /* User.swift in Sources */,
 				DAE716002361180C00698CFF /* Contants.swift in Sources */,
 				DAE71603236119CF00698CFF /* RoundedViews.swift in Sources */,
 				DA7627D223661C2F00323555 /* ForgotPasswordViewController.swift in Sources */,
 				DA1A930B234D5AE40021C53C /* HomeViewController.swift in Sources */,
 				DA1A9307234D5AE40021C53C /* AppDelegate.swift in Sources */,
+				DABDB3AA257FF2F700454FD5 /* CartItemTableViewCell.swift in Sources */,
+				DABDB3A5257FEB1A00454FD5 /* CheckoutViewController.swift in Sources */,
 				DA1A9309234D5AE40021C53C /* SceneDelegate.swift in Sources */,
 				DA1C55C92394884500A4C461 /* ProductDetailViewController.swift in Sources */,
+				DABDB3B2257FF90600454FD5 /* StripeCart.swift in Sources */,
 				DA3FF9DC236D1F200055EFA6 /* Category.swift in Sources */,
 				DACFACCF23775654001CE730 /* Product.swift in Sources */,
 			);
@@ -543,11 +593,13 @@
 			files = (
 				DAB18CC223AEE5B200CBCBF9 /* RoundedViews.swift in Sources */,
 				DA69B8A72366291D00DF3779 /* Firebase+Utils.swift in Sources */,
+				DABDB3AB257FF2F700454FD5 /* CartItemTableViewCell.swift in Sources */,
 				DACFACD023775659001CE730 /* Product.swift in Sources */,
 				DAC1089823AEEC24007EA4D3 /* ProductsViewController.swift in Sources */,
 				DACFACD423775733001CE730 /* ProductTableViewCell.swift in Sources */,
 				DA3FF9DD236D1F200055EFA6 /* Category.swift in Sources */,
 				DA1A9325234D5B360021C53C /* AdminHomeViewController.swift in Sources */,
+				DABDB3B3257FF90600454FD5 /* StripeCart.swift in Sources */,
 				DA1A9321234D5B360021C53C /* AppDelegate.swift in Sources */,
 				DA0E45E4240494FB00D0A2D6 /* AdminProductsViewController.swift in Sources */,
 				DAB18CC023AEE5A200CBCBF9 /* Contants.swift in Sources */,
@@ -555,9 +607,11 @@
 				DA3FF9E5236D210C0055EFA6 /* CategoryCollectionViewCell.swift in Sources */,
 				DAB18CC123AEE5A600CBCBF9 /* Extensions.swift in Sources */,
 				DA9949872404992500B7D168 /* AddEditProductViewController.swift in Sources */,
+				DAE79EAC25829C2F00F6A6F1 /* UserService.swift in Sources */,
 				DAC1089D23AEF9D0007EA4D3 /* AddEditCategoryViewController.swift in Sources */,
 				DA1A9323234D5B360021C53C /* SceneDelegate.swift in Sources */,
 				DAC1089723AEEAE4007EA4D3 /* HomeViewController.swift in Sources */,
+				DAE79EAF25829C4A00F6A6F1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

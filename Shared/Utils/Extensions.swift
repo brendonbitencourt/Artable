@@ -25,4 +25,22 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func sendMessageGuestUser() {
+        self.simpleAlert(title: "Hi Friend", message: "This is a user only feature, please create a registered user to take advantage of all our features.")
+    }
+    
+}
+
+extension Int {
+    
+    func penniesToFormattedCurrency() -> String {
+        let dollars = Double(self) / 100
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        if let dollarString = formatter.string(from: dollars as NSNumber) {
+            return dollarString
+        }
+        return "$0.00"
+    }
+    
 }
